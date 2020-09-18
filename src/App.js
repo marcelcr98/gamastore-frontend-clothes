@@ -1,11 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+//import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import ProductList from './components/ProductList'
+import Navbar from './components/Navbar'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+//Browser router permite enrutar
+
+
+/*instalar
+
+npm install tailwind
+npm i react-router-dom
+npm install axios
+
+*/
+/*Para proyecto nuevo eliminar esto
+     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,7 +31,42 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+*/
+
+//el path sera products para el inicio
+
+
+
+function App() {
+
+  return (
+   
+      <BrowserRouter>
+
+      <Navbar/>
+
+
+
+      <div className="container p-4">
+
+        <Switch>
+
+          <Route path="/products">
+
+            <ProductList/>
+          </Route>
+
+
+        </Switch>
+      
+     
+      </div>
+      </BrowserRouter>
+
+
+
+  
+   
   );
 }
 
